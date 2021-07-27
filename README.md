@@ -4,9 +4,9 @@
 ## выполнил проект-Денис Кононов
 
 ### Технологии в проекте
--HTML
--CSS
--Javascript
--Normalize
--Fancybox
+- HTML
+- CSS
+- Javascript
+- Normalize
+- Fancybox
 
