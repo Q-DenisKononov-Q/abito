@@ -18,6 +18,11 @@ body {
   justify-content: space-between;  /* разбросать элементы по краям*/
   margin-bottom: 24px;
 }
+.navbar-panel {
+  flex: 1;  /*растянуть по ширине*/
+  display: flex; /*сделать гибким*/
+  align-items: center; /*выронять по середине*/
+}
 
 /* меню в шапке */
 .navbar-menu {
@@ -81,7 +86,7 @@ body {
 .page-content {
   display: grid;
   grid-template-columns: 9fr 3fr;
-  grid-column-gap: 30px;
+  /* grid-column-gap: 10px; */
 }
 .card-image {
   border-radius: 10px;
@@ -92,10 +97,11 @@ body {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .card {
   margin-bottom: 20px;
+  margin-right: 15px;
 }
 .card-title {
   font-size: 16px;
@@ -172,6 +178,7 @@ body {
 .main-single {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 .content {
   max-width: 460px;
@@ -281,4 +288,115 @@ body {
   background-color: #14B4BE;
   border-radius: 5px;
   color: #fff;
+}
+
+.menu-button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  display: none; /*отключаем кнопку везде*/
+}
+.close-menu {
+  display: none;
+}
+ .mySwiper2 img {
+  width: 460px;
+  height: 357px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .card {
+    width: 45%;
+  }
+  .card-image {
+    width: 100%;
+    height: 200px;
+  } 
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 740px;
+    flex-wrap: wrap;
+  }
+  .card-image {
+    height: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 560px;
+  }
+  .card {
+    width: 100%;
+  }
+  .page-content {
+    grid-template-columns: 8fr 4fr;
+  }
+  .menu-button {
+    display: block;
+  }
+  .close-menu {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+  }
+  .navbar-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9;
+    flex-direction: column; /*выстроить дочерние элементы в столбец*/
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s opacity 0.2s;
+    transform: translateX(100%); /*уберем меню в сторону его не будет видно*/
+    opacity: 0;
+  }
+  .is-open {
+    transform: translateX(0%);
+    opacity:1;
+  }
+  .navbar-menu {
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .button-group {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+.container {
+  max-width: 90%;
+}
+.page-content {
+    grid-template-columns: 12fr;
+  }
+  .card-image {
+    height: 250px;
+  }
+  .card {
+    margin-right: 0;
+  }
+  .search-button-text {
+    display: none;
+  }
 }
